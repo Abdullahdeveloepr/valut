@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Images</title>
+    <link rel="stylesheet" href="../static/upload.css">
+</head>
+<body>
+   <div class="container">
+        <h1 class="title">Upload Image</h1>
+        <div class="container">
+            <div class="preview-container" id="previewContainer"></div>
+        </div>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Choose Image:</label>
+                <input type="file" name="file" id="file" class="form-control-file" onchange="previewImage()">
+            </div>
+            <div id="dropArea" class="drop-area" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+                <p>Drag & drop or click to upload</p>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+    </div>
+    <script src="../static/js/uploader.js"></script>
+</body>
+</html>
